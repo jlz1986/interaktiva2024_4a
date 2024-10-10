@@ -20,6 +20,7 @@ h1 {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 article {
@@ -39,7 +40,7 @@ a {
 }
 
 article img {
-    max-height: 400px;    
+    height: 500px;
 }
 
 .article-data {
@@ -50,11 +51,23 @@ article img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;    
+    height: 40px;   
+    margin-top: 10px; 
 }
 
 .downgrade {    
+    position: relative;  
     font-size: 1.2rem;
+}
+
+.downgrade:hover {    
+    color: red;
+}
+
+.downvotes {
+    position: absolute;
+    left: 23px;
+    top: 5px;
 }
 
 .upgrade {  
@@ -62,10 +75,14 @@ article img {
     font-size: 1.2rem;
 }
 
+.upgrade:hover {
+    color:green;
+}
+
 .upvotes {
     position: absolute;
-    left: 14px;
-    top:10px;
+    left: 23px;
+    top: 14px;
 }
 
 .fa-regular, .fa-solid {
@@ -73,16 +90,14 @@ article img {
 }
 
 .fa-thumbs-up {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
+    font-size: 2.6rem;
 }
 
-.fa-thumbs-up:hover {
-    color:green;    
+.fa-thumbs-down {
+    font-size: 2.6rem;
 }
 
-.fa-thumbs-down:hover {
-    color:red;
-}
 
 @media all and (max-width:1075px) {
     h1 {
@@ -90,11 +105,11 @@ article img {
     }
     article {
         max-width: 100%;
-
+        width: 100%;
     }
 
-    article img {
-        max-width: 100%;
-        max-height: 100%;
+    article img {        
+        width: 100%;
+        height: auto;
     }
 }
