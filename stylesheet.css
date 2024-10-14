@@ -1,20 +1,55 @@
+:root {
+    --super-lite-beige: rgb(255, 255, 192);    
+}
+
 *{
     box-sizing: border-box;
     margin:0px;
 }
 
+.current-page {
+    text-decoration: underline;
+}
+
 nav {
     height: 50px;
     border-bottom: 1px solid black;
+    background-color: var(--super-lite-beige);
+}
+
+nav ul {    
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+
+nav li {
+    margin: 10px;
+    font-size: 1.6rem;
+}
+
+nav li:hover {
+    text-shadow: 2px 2px 4px black;
 }
 
 header  {
     text-align: center;
     border-bottom: 1px solid black;
+    background-color: var(--super-lite-beige);
+    background-image: url('images/wheat.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
     font-size: 10rem;
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
 }
 
 .flex-container {
@@ -28,6 +63,74 @@ article {
     max-width: 500px;
     border: 1px solid black;
     overflow: hidden;
+}
+
+.recept {
+    border: none;
+    width: 100%;
+    max-width: none;
+    margin:0;
+}
+
+.recept-header {
+    background-color: cadetblue;
+}
+
+.recept-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside {
+    flex:20%;
+}
+
+summary {
+    flex:60%;
+}
+
+summary li {
+    padding: 5px;
+}
+
+.recept-adds {
+    flex: 20%;
+}
+
+.recept-adds img {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    padding: 15px;
+    text-align: center;
+}
+
+.about-us-article {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: none;
+    width: 100%;
+    height: 200px;    
+}
+
+.about-us-article-left {
+    flex:20%;
+    height: 100%;
+}
+
+.about-us-article-left img {
+    height: 178px;
+    width: auto;
+}
+
+.about-us-article-left h3 {
+    margin-top:-5px;
+}
+
+.about-us-article-right {
+    flex:80%;
 }
 
 meter {
@@ -98,6 +201,42 @@ article img {
     font-size: 2.6rem;
 }
 
+footer {
+    background-color:  var(--super-lite-beige);
+    height: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h4 {
+    font-size: 1.7rem;
+}
+
+footer i {
+    font-size: 2.0rem;
+    padding: 5px;
+}
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-instagram {
+    color: darkorchid;
+}
+
+.fa-tiktok {
+    color: black;    
+}
+
+.fa-youtube {
+    color: red;
+}
+
+footer p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 
 @media all and (max-width:1075px) {
     h1 {
@@ -111,5 +250,12 @@ article img {
     article img {        
         width: 100%;
         height: auto;
+    }
+
+    .about-us-article-left {
+        flex:30%;
+    }
+    .about-us-article-right {
+        flex:70%;
     }
 }
