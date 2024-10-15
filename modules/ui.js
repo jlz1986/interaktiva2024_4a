@@ -6,6 +6,7 @@ function createIconsForTypes(types) {
   foodTypeDiv.classList.add("food-type");
 
   // Loopa igenom typerna och skapa ikoner
+  // kommentar
   types.forEach((type) => {
     const iconData = typeToIconMap[type];
     if (iconData) {
