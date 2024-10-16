@@ -1,0 +1,57 @@
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin-bottom: 20px; /* Ge utrymme nedanför sektionen */
+  border-radius: 10px; /* Lite rundade hörn för en mjukare look */
+}
+
+/* Sökfältet */
+#search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px; /* Ger lite avstånd mellan fältet och slidern */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Slider input */
+#calorie-slider {
+  width: 100%; /* Gör så att den fyller hela sin container */
+  margin-top: 10px;
+}
+
+/* Stil för etiketten och kalorivärdet */
+.slider-container label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#calorie-value {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Formge sökfältet */
+#search-input {
+  width: 100%;
+  max-width: 400px; /* Begränsa sökfältets maxbredd */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Diskret ram runt sökfältet */
+  border-radius: 5px; /* Rundade hörn */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Liten skugga för djup */
+}

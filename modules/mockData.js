@@ -162,7 +162,7 @@ export function getDishes() {
       description:
         "Den här veganska pajen är full med smak. Körsbärstomaterna får en fin söt ton av att tillagas i ugnen och stuvningen gör pajen krämig och god. Låt gärna pajen vila minst en timme före servering, då håller den ihop bättre.",
       title: "Vegansk tomat- och purjolökspaj",
-      downvotes: 1,
+      downvotes: 5,
       upvotes: 3,
       ingredients: [
         {
