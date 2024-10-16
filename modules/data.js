@@ -21,17 +21,15 @@ export async function getFoodImages(dishes) {
 export function downVoteDish(dishes, dishId) {
   const dish = dishes.find((d) => d.id == dishId);
   if (dish) {
-    // här har jag nog hämtat betyget från ett API
     dish.downvotes += 1;
   }
   return dish;
 }
 
 export async function getDishesWithImages() {
-  const dishes = await getDishes(); // Hämta rätterna
-  // Hämta och lägg till bilder för varje rätt
+  const dishes = await getDishes();
   for (const dish of dishes) {
     dish.image = await fetchFoodImage();
   }
-  return dishes; // Returnera rätterna med bilder
+  return dishes;
 }

@@ -16,6 +16,7 @@ export function filterDishesBySearchInput(dishes) {
     // kommer samma maträtt flera gånger? Testa att skapa en clearDishes();
     clearDishes();
     generateDishes(filteredDishes);
+    setupDownvoteListeners(filteredDishes);
   });
 }
 
@@ -27,7 +28,7 @@ export function setupDownvoteListeners(dishes) {
     downvoteIcon.addEventListener("click", (event) => {
       const dishId = event.target.closest("article").getAttribute("data-id");
       const updatedDish = downVoteDish(dishes, dishId); // Uppdatera data
-      console.log(updatedDish);
+
       if (updatedDish) {
         // Uppdatera DOM
         const downvoteSpan = event.target
