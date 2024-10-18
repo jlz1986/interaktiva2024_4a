@@ -33,8 +33,8 @@ export async function reviewMedia(reviewDto) {
       },
       body: JSON.stringify(reviewDto),
     });
-    console.log("response", response.status);
-    console.log("data", response);
+    // console.log("response", response.status);
+    // console.log("data", response);
 
     if (response.status === 409) {
       const errorData = await response.json();
