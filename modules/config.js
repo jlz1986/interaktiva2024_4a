@@ -2,7 +2,7 @@ export const config = {
   cmdbApi: {
     baseUrl: "https://dsvkurs.miun.se/api",
     key: "X-API-KEY",
-    value: "key1", // lägg in din nyckel
+    value: "", // lägg in din nyckel
   },
   imageConfig: {
     baseUrl: "https://image.tmdb.org/t/p/",
