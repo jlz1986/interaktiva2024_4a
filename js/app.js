@@ -3,6 +3,7 @@ import {
   generateDishes,
   setupDownvoteListeners,
   filterDishesBySearchInput,
+  setupSearchMovieButton,
 } from "../modules/ui.js";
 
 let dishes = [];
@@ -12,4 +13,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   await generateDishes(dishes);
   setupDownvoteListeners(dishes);
   filterDishesBySearchInput(dishes);
+  setupSearchMovieButton();
 });

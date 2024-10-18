@@ -1,5 +1,6 @@
 import { getUniqueIngredientTypes, downVoteDish } from "./data.js";
 import { typeToIconMap } from "./icon.js";
+import { getGenres, reviewMedia } from "./cmdb.js";
 
 // *********** sök *******************
 
@@ -22,6 +23,22 @@ export function filterDishesBySearchInput(dishes) {
 
 // *********** röstningsfunktioner *******************
 
+export async function setupSearchMovieButton() {
+  console.log("laddag");
+  const movieButton = document.querySelector("#search-movie");
+  movieButton.addEventListener("click", async () => {
+    //const genres = await getGenres();
+    //console.log(genres);
+    const movieDto = {
+      imdb_id: "tt0100998",
+      cmdb_score: 0,
+      title: "Test",
+      content: "Jag tycker den här  filmen verkar spännande",
+    };
+    const result = await reviewMedia(movieDto);
+    console.log(result);
+  });
+}
 export function setupDownvoteListeners(dishes) {
   // Lägg till event-lyssnare för downvote-knappar
   document.querySelectorAll(".fa-thumbs-down").forEach((downvoteIcon) => {
