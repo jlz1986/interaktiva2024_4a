@@ -1,6 +1,6 @@
 import { config } from "./config.js";
 
-const baseUrl = [config.cmdbApi.testUrl];
+const baseUrl = [config.cmdbApi.baseUrl];
 export async function getGenres() {
   console.log("base" + baseUrl);
   try {
@@ -22,7 +22,7 @@ export async function getGenres() {
   }
 }
 
-export async function reviewMedia(mediaDto) {
+export async function reviewMedia(reviewDto) {
   try {
     let endpoint = baseUrl + "/Contributions/Review";
     const response = await fetch(endpoint, {
@@ -31,27 +31,29 @@ export async function reviewMedia(mediaDto) {
         "Content-type": "application/json",
         [config.cmdbApi.key]: config.cmdbApi.value,
       },
-      body: JSON.stringify(mediaDto),
+      body: JSON.stringify(reviewDto),
     });
     console.log("response", response.status);
     console.log("data", response);
 
     if (response.status === 409) {
       const errorData = await response.json();
-      console.warn(errorData).detail;
+      console.warn(errorData.detail);
+      return { error: true, message: errorData.detail, status: 409 };
     }
 
     if (response.status === 400) {
       const errorData = await response.json();
-      console.warn(errorData).detail;
+      console.warn(errorData.detail);
+      return { error: true, message: errorData.detail, status: 400 };
     }
 
     if (!response.ok) {
-      console.log("felaktigt anrop");
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
-    const genres = await response.json();
-    return genres;
+    const mediaDto = await response.json();
+    return medidaDto;
   } catch (error) {
-    console.error("Kunde inte hämta, något gick fel", error);
+    console.error("Kunde inte skicka recension, något gick fel", error);
   }
 }

@@ -20,9 +20,7 @@ export function filterDishesBySearchInput(dishes) {
     setupDownvoteListeners(filteredDishes);
   });
 }
-
-// *********** röstningsfunktioner *******************
-
+// ************ Sökknapp (som används för anrop just nu)
 export async function setupSearchMovieButton() {
   console.log("laddag");
   const movieButton = document.querySelector("#search-movie");
@@ -31,14 +29,21 @@ export async function setupSearchMovieButton() {
     //console.log(genres);
     const movieDto = {
       imdb_id: "tt0100998",
-      cmdb_score: 0,
+      cmdb_score: 2,
       title: "Test",
       content: "Jag tycker den här  filmen verkar spännande",
     };
     const result = await reviewMedia(movieDto);
+    if (result.error) {
+      alert(`Det här gick inte bra: ${result.message}`);
+    } else {
+      console.log("Success:", result.data);
+    }
     console.log(result);
   });
 }
+
+// *********** röstningsfunktioner *******************
 export function setupDownvoteListeners(dishes) {
   // Lägg till event-lyssnare för downvote-knappar
   document.querySelectorAll(".fa-thumbs-down").forEach((downvoteIcon) => {
